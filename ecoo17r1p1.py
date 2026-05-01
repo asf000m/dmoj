@@ -1,5 +1,4 @@
-# DMOJ ecoo17r1p1
-# ECOO '17 R1 P1 - Munch 'n' Brunch
+# This is DMOJ problem ecoo17r1p1.
 
 
 test_cases = 10
@@ -19,14 +18,12 @@ for _ in range(test_cases):
 
     diff_total_students = abs(total_students - sum(year_students))
     
+    idx_highest = year_students.index(max(year_students))
+    year_students[idx_highest] += diff_total_students
+    
     proceeds = 0
     for i in range(len(year_students)):
         proceeds += year_students[i] * YEAR_COSTS[i]
-
-    highest_attendees = sorted(year_students)[-1]
-    for i in range(len(year_students)):
-        if highest_attendees == year_students[i]:
-            proceeds += diff_total_students * YEAR_COSTS[i]
     
     if proceeds / 2 >= trip_cost:
         outputs.append('NO')
