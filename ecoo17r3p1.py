@@ -21,30 +21,30 @@ for _ in range(datasets):
         # baked goods sold in a day in each franchise
         user_input = input().strip().split()
 
-        sells_in_day = [int(sells) for sells in user_input]
+        sales_in_day = [int(sales) for sales in user_input]
         
-        # sum all the sells from the franchises in the day
-        sum_sells_in_day = sum(sells_in_day)
-        # check if the sum of the sells is a multiple of 13
-        if sum_sells_in_day / 13 - int(sum_sells_in_day / 13) == 0:
-            multiples_13 += int(sum_sells_in_day / 13)
+        # sum all the sales from the franchises in the day
+        sum_sales_in_day = sum(sales_in_day)
+        # check if the sum of the sales is a multiple of 13
+        if sum_sales_in_day / 13 - int(sum_sales_in_day / 13) == 0:
+            multiples_13 += int(sum_sales_in_day / 13)
         
-        goods_sold.append(sells_in_day)
+        goods_sold.append(sales_in_day)
 
-    sums_sells_franchise = []
+    sums_sales_franchise = []
     i = 0
     while i < franchises:
-        sells_franchise = 0
+        sales_franchise = 0
         
-        # sum the sells of all days of a franchise
-        for sells_in_day in goods_sold:
-            sells_franchise += sells_in_day[i]
+        # sum the sales of all days of a franchise
+        for sales_in_day in goods_sold:
+            sales_franchise += sales_in_day[i]
         
-        sums_sells_franchise.append(sells_franchise)
+        sums_sales_franchise.append(sales_franchise)
 
         i += 1
 
-    for sum_franchise in sums_sells_franchise:
+    for sum_franchise in sums_sales_franchise:
         if sum_franchise / 13 - int(sum_franchise / 13) == 0:
             multiples_13 += int(sum_franchise / 13)
     
